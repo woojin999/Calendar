@@ -1,0 +1,18 @@
+.Schedule-title{
+    margin-bottom: 1rem;
+}
+
+.Schedule-date{
+    display: flex;
+    justify-content: space-evenly;
+    p{
+        background-color: rgb(205, 235, 253);
+        padding: .3rem;
+        border-radius: .3rem;
+    }
+    button{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+}

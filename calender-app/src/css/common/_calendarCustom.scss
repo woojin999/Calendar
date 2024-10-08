@@ -7,6 +7,18 @@
   justify-content: space-around;
 }
 
+/* 연월 */
+.react-calendar__navigation__label__labelText{
+ font-size: 1.3rem;
+ font-weight: bold;
+}
+/* 연월 이동버튼 */
+.react-calendar__navigation__arrow{
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 2rem;
+}
+
 .react-calendar__month-view__days__day {
   position: relative;
   height: 70px;

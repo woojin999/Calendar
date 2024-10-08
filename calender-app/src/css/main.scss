@@ -10,6 +10,7 @@ body * {
 .MyCalendarPage-area{
     width: 100%;
     height: 100%;
+    padding: 0 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,7 +20,7 @@ body * {
     display: flex;
     border-radius: 8px;
     overflow: hidden;
-    width: 700px;
+    width: 900px;
     height: 550px;
     justify-content: center;
     align-items: ceneter;
