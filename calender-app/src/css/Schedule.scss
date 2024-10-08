@@ -1,18 +1,23 @@
-.Schedule-title{
-    margin-bottom: 1rem;
+.Schedule-title {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.4rem;
 }
 
-.Schedule-date{
-    display: flex;
-    justify-content: space-evenly;
-    p{
-        background-color: rgb(205, 235, 253);
-        padding: .3rem;
-        border-radius: .3rem;
-    }
-    button{
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }
+.Schedule-date {
+  display: flex;
+  justify-content: space-between;
+  p {
+    background-color: rgb(205, 235, 253);
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    font-weight: 500;
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+  }
 }

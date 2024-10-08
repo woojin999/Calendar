@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CalendarBox from "../Components/CalendarBox";
 import Schedule from "../Components/Schedule";
+import TodoAddModal from "../Components/TodoAddModal";
 
 function MyCalendarPage(props) {
   const [date, setDate] = useState(new Date());
@@ -20,6 +21,7 @@ function MyCalendarPage(props) {
       <div className="MyCalendarPage-box">
         <CalendarBox date={date} handelDate={setDate} />
         <Schedule date={date} openModal={openModal}/>
+        <TodoAddModal open={modal} closeModal={closeModal} date={date}/>
       </div>
     </div>
   );
