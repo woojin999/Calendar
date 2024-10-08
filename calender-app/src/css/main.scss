@@ -1,0 +1,41 @@
+@import "./common/core";
+@import "./common/reset";
+@import "./common/calendarCustom";
+
+body * {
+//   outline: 2px dashed #ccc;
+  text-align: center;
+}
+
+.MyCalendarPage-area{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(0deg, rgb(242, 251, 255) 0%, rgb(182, 244, 255) 100%);
+}
+.MyCalendarPage-box{
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 700px;
+    height: 550px;
+    justify-content: center;
+    align-items: ceneter;
+    border: 1px solid rgb(205, 235, 253);
+    box-shadow: 10px 10px 10px #a7a7a7;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    width: 70%;
+}
+.schedule-container{
+    width: 30%;
+    background-color: #fff;
+    border-left: 1px solid rgb(205, 235, 253);
+    padding: 16px;
+}
