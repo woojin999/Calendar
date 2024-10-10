@@ -1,0 +1,29 @@
+.TodoItem-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  .circle-box {
+    width: 2rem;
+    height: 2rem;
+    background-color: rgb(182, 244, 255);
+    border-radius: 50%;
+  }
+  .TodoItem-title-box {
+    width: calc(100% - 7rem);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  p {
+    display: contents;
+    font-size: 1.2rem;
+  }
+  .TodoItemBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+}

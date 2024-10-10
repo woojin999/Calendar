@@ -12,10 +12,16 @@ function MyCalendarPage(props) {
     localStorage.setItem("schedule", JSON.stringify(schedule));
   }, [schedule]);
 
+  const [isList, setIsList] = useState(true);
+  const [selectedTodo, setSelectedTodo] = useState({});
+  const handleTodo = (todo) => {
+    setSelectedTodo(todo);
+    setIsList(false);
+  };
+
   const openModal = () => {
     setModal(true);
     console.log("openModal");
-    
   };
   const closeModal = () => {
     setModal(false);
@@ -25,8 +31,21 @@ function MyCalendarPage(props) {
     <div className="MyCalendarPage-area">
       <div className="MyCalendarPage-box">
         <CalendarBox date={date} handelDate={setDate} />
-        <Schedule date={date} openModal={openModal} schedule={schedule}/>
-        <TodoAddModal open={modal} closeModal={closeModal} date={date} addSchedule={setSchedule} schedule={schedule}/>
+        <Schedule
+          date={date}
+          openModal={openModal}
+          schedule={schedule}
+          isList={isList}
+          handleTodo={handleTodo}
+          selectedTodo={selectedTodo}
+        />
+        <TodoAddModal
+          open={modal}
+          closeModal={closeModal}
+          date={date}
+          addSchedule={setSchedule}
+          schedule={schedule}
+        />
       </div>
     </div>
   );
