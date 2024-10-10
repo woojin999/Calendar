@@ -30,7 +30,7 @@ function MyCalendarPage(props) {
   return (
     <div className="MyCalendarPage-area">
       <div className="MyCalendarPage-box">
-        <CalendarBox date={date} handelDate={setDate} />
+        <CalendarBox date={date} handelDate={setDate} schedule={schedule}/>
         <Schedule
           date={date}
           openModal={openModal}

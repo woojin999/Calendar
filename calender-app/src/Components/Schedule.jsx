@@ -36,7 +36,7 @@ function Schedule({
         </div>
       </div>
       <div className="Schedule-box">
-        {isList && scheduleList.map((todo, i) => <TodoItem todo={todo} />)}
+        {isList && scheduleList.map((todo, i) => <TodoItem todo={todo} key={i} />)}
       </div>
     </div>
   );

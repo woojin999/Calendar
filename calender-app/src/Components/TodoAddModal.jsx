@@ -16,7 +16,7 @@ function TodoAddModal({ open, closeModal, date, schedule, addSchedule }) {
       return;
     }
 
-    const month = date.getMonth()+1 + "월";
+    const month = date.getMonth() + 1 + "월";
     let newId = crypto.randomUUID();
 
     const newTodo = {
@@ -29,7 +29,7 @@ function TodoAddModal({ open, closeModal, date, schedule, addSchedule }) {
     };
     console.log(newTodo);
 
-    if (Object.keys(schedule).includes(`${date.getMonth()+1}월`)) {
+    if (Object.keys(schedule).includes(`${date.getMonth() + 1}월`)) {
       newTodo.idx = schedule[month].length + 1;
       const monthSchedule = schedule[month].concat(newTodo);
       addSchedule((prev) => ({
@@ -46,9 +46,9 @@ function TodoAddModal({ open, closeModal, date, schedule, addSchedule }) {
     }
     console.log(schedule);
 
-    setTitle('');
-    setDescription('');
-    setTime('09:00');
+    setTitle("");
+    setDescription("");
+    setTime("09:00");
     closeModal();
   };
 

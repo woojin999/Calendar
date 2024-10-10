@@ -6,36 +6,57 @@
 //   outline: 2px dashed #ccc;
 // }
 
-.MyCalendarPage-area{
-    width: 100%;
-    height: 100%;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(0deg, rgb(242, 251, 255) 0%, rgb(182, 244, 255) 100%);
+.MyCalendarPage-area {
+  width: 100%;
+  height: 100%;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    0deg,
+    #f2fbff 0%,
+    #b6f4ff 100%
+  );
 }
-.MyCalendarPage-box{
-    display: flex;
-    border-radius: 8px;
-    overflow: hidden;
-    width: 900px;
-    height: 550px;
-    justify-content: center;
-    align-items: ceneter;
-    border: 1px solid rgb(205, 235, 253);
-    box-shadow: 10px 10px 10px #a7a7a7;
+.MyCalendarPage-box {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 900px;
+  height: 550px;
+  justify-content: center;
+  align-items: ceneter;
+  border: 1px solid rgb(205, 235, 253);
+  box-shadow: 10px 10px 10px #a7a7a7;
 }
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  width: 70%;
 }
-.schedule-container{
-    width: 30%;
-    background-color: #fff;
-    border-left: 1px solid rgb(205, 235, 253);
-    padding: 16px;
+.schedule-container {
+  width: 30%;
+  background-color: #fff;
+  border-left: 1px solid rgb(205, 235, 253);
+  padding: 16px;
+}
+.showtitle-box {
+  width: 100%;
+  .showtitle-dt {
+    p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 0.8rem;
+    }
+  }
+  .showtitle-dt:first-child {
+    background-color: #cdebfd;
+  }
+  .showtitle-dt:last-child {
+    background-color: #a2d8fa;
+  }
 }
