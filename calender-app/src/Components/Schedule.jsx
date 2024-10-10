@@ -4,7 +4,7 @@ import "../css/Schedule.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-function Schedule({ date, openModal }) {
+function Schedule({ date, openModal,schedule }) {
   return (
     <div className="schedule-container">
       <div className="Schedule-header">

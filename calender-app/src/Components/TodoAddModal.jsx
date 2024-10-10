@@ -4,13 +4,57 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
 
-function TodoAddModal({ open, closeModal, date }) {
-    const [title, setTitle] = useState('');
-    const [descrpition,setDescrpition] = useState('');
-    const [time, setTime] = useState('09:00');
+function TodoAddModal({ open, closeModal, date, schedule, addSchedule }) {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [time, setTime] = useState("09:00");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (title === "") {
+      return;
+    }
+
+    const month = date.getMonth()+1 + "월";
+    let newId = crypto.randomUUID();
+
+    const newTodo = {
+      id: `${newId}`,
+      date: `${moment(date).format("YYYY년 MM월 DD일")}`,
+      title: `${title}`,
+      description: `${description}`,
+      time: `${time}`,
+      idx: 1,
+    };
+    console.log(newTodo);
+
+    if (Object.keys(schedule).includes(`${date.getMonth()+1}월`)) {
+      newTodo.idx = schedule[month].length + 1;
+      const monthSchedule = schedule[month].concat(newTodo);
+      addSchedule((prev) => ({
+        ...prev,
+        [month]: monthSchedule,
+      }));
+      console.log("있어");
+    } else {
+      addSchedule((prev) => ({
+        ...prev,
+        [month]: [newTodo],
+      }));
+      console.log("없어");
+    }
+    console.log(schedule);
+
+    setTitle('');
+    setDescription('');
+    setTime('09:00');
+    closeModal();
+  };
+
   return (
     <div className={open ? "TodoAddModal-area open" : "TodoAddModal-area"}>
-      <form action="" className="TodoAddModal-form">
+      <form onSubmit={handleSubmit} className="TodoAddModal-form">
         <div className="TodoAddModal-info">
           <h2>일정 등록하기</h2>
           <FontAwesomeIcon icon={faX} onClick={closeModal} />
@@ -30,8 +74,8 @@ function TodoAddModal({ open, closeModal, date }) {
           rows="5"
           cols="33"
           placeholder="description"
-          value={descrpition}
-          onChange={(e) => setDescrpition(e.target.value)}
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
         />
         <input
           type="time"
