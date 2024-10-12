@@ -4,6 +4,7 @@ import "../css/Schedule.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import TodoItem from "./TodoItem";
+import TodoDetail from "./TodoDetail";
 
 function Schedule({
   date,
@@ -12,9 +13,11 @@ function Schedule({
   isList,
   handleTodo,
   selectedTodo,
+  deleteTodoItem,
+  closeDetail,
 }) {
   // 해당 날짜의 일정 리스트 만들기
-  const month = date.getMonth()+1 + "월";
+  const month = date.getMonth() + 1 + "월";
   const scheduleList = Object.keys(schedule).includes(
     `${date.getMonth() + 1}월`
   )
@@ -22,8 +25,8 @@ function Schedule({
         .filter((todo) => todo.date === moment(date).format("YYYY년 MM월 DD일"))
         .sort((a, b) => a.idx - b.idx)
     : [];
-    console.log(scheduleList);
-    
+  // console.log(scheduleList);
+
   return (
     <div className="schedule-container">
       <div className="Schedule-header">
@@ -36,7 +39,24 @@ function Schedule({
         </div>
       </div>
       <div className="Schedule-box">
-        {isList && scheduleList.map((todo, i) => <TodoItem todo={todo} key={i} />)}
+        {isList &&
+          scheduleList.map((todo, i) => (
+            <TodoItem
+              todo={todo}
+              key={i}
+              month={month}
+              deleteTodoItem={deleteTodoItem}
+              handleTodo={handleTodo}
+            />
+          ))}
+        {!isList && (
+          <TodoDetail
+            todo={selectedTodo}
+            month={month}
+            closeDetail={closeDetail}
+            deleteTodoItem={deleteTodoItem}
+          />
+        )}
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import "react-calendar/dist/Calendar.css";
 import Schedule from "./Schedule";
 import moment from "moment";
 
-function CalendarBox({ date, handelDate, schedule }) {
+function CalendarBox({ date, handelDate, schedule, closeDetail }) {
   const showTitle = ({ date, view }) => {
     if (view === "month") {
       const month = date.getMonth() + 1 + "월";
@@ -19,20 +19,25 @@ function CalendarBox({ date, handelDate, schedule }) {
             .sort((a, b) => a.idx - b.idx)
         : [];
 
-        for (let i = 0; i < scheduleList.length; i++) {
-          if (i === 2) break;
-          hcode.push(
-            <div key={scheduleList[i].id} className="showtitle-dt">
-             <p> {scheduleList[i].title}</p>
-            </div>
-          )
-        }
-        return <div className="showtitle-box">{hcode}</div>;
+      for (let i = 0; i < scheduleList.length; i++) {
+        if (i === 2) break;
+        hcode.push(
+          <div key={scheduleList[i].id} className="showtitle-dt">
+            <p> {scheduleList[i].title}</p>
+          </div>
+        );
+      }
+      return <div className="showtitle-box">{hcode}</div>;
     }
   };
   return (
     <div className="container">
-      <Calendar onChange={handelDate} value={date} tileContent={showTitle} />
+      <Calendar
+        onChange={handelDate}
+        value={date}
+        tileContent={showTitle}
+        onClickDay={closeDetail}
+      />
     </div>
   );
 }

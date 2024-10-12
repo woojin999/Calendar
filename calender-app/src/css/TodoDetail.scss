@@ -1,0 +1,36 @@
+.todo-detail-box {
+  height: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .detail-header{
+    margin-top: 1rem;
+    h3{
+        padding-left: .3rem;
+        font-size: 1.5rem;
+        background-color: #d9f7fc;
+    }
+    p{
+        text-align: right;
+    }
+  }
+  .detail-desc{
+    padding: .3rem 0;
+    border-top: 1.5px solid #bbd9ff;
+    border-bottom: 1.5px solid #bbd9ff;
+    height: 300px;
+  }
+  .detail-btn-box {
+    display: flex;
+    justify-content: space-between;
+    .Xbtn-box {
+      cursor: pointer;
+    }
+    .edit-box {
+      cursor: pointer;
+      .editBtn {
+        margin-right: 0.6rem;
+      }
+    }
+  }
+}

@@ -57,7 +57,7 @@ function TodoAddModal({ open, closeModal, date, schedule, addSchedule }) {
       <form onSubmit={handleSubmit} className="TodoAddModal-form">
         <div className="TodoAddModal-info">
           <h2>일정 등록하기</h2>
-          <FontAwesomeIcon icon={faX} onClick={closeModal} />
+          <FontAwesomeIcon icon={faX} onClick={closeModal} className="mXBtn" />
         </div>
         <div className="TodoAddModal-date">
           <h3>{moment(date).format("YYYY년 MM월 DD일")}</h3>

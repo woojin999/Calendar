@@ -18,6 +18,9 @@ function MyCalendarPage(props) {
     setSelectedTodo(todo);
     setIsList(false);
   };
+  const closeDetail = () => {
+    setIsList(true);
+  };
 
   const openModal = () => {
     setModal(true);
@@ -27,10 +30,24 @@ function MyCalendarPage(props) {
     setModal(false);
   };
 
+  const deleteTodoItem = (month, id) => {
+    const newList = schedule[month].filter((todo) => todo.id !== id);
+    setSchedule((prev) => ({
+      ...prev,
+      [month]: newList,
+    }));
+    setIsList(true);
+  };
+
   return (
     <div className="MyCalendarPage-area">
       <div className="MyCalendarPage-box">
-        <CalendarBox date={date} handelDate={setDate} schedule={schedule}/>
+        <CalendarBox
+          date={date}
+          handelDate={setDate}
+          schedule={schedule}
+          closeDetail={closeDetail}
+        />
         <Schedule
           date={date}
           openModal={openModal}
@@ -38,6 +55,8 @@ function MyCalendarPage(props) {
           isList={isList}
           handleTodo={handleTodo}
           selectedTodo={selectedTodo}
+          deleteTodoItem={deleteTodoItem}
+          closeDetail={closeDetail}
         />
         <TodoAddModal
           open={modal}

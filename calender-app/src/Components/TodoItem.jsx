@@ -2,15 +2,20 @@ import React from "react";
 import "../css/TodoItem.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPencil,faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { faPencil, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
-function TodoItem({ todo }) {
-  console.log(todo);
+function TodoItem({ todo, month, deleteTodoItem, handleTodo }) {
+  // console.log(todo);
 
   return (
     <div className="TodoItem-box">
       <div className="circle-box"></div>
-      <div className="TodoItem-title-box">
+      <div
+        className="TodoItem-title-box"
+        onClick={() => {
+          handleTodo(todo);
+        }}
+      >
         <p>{todo.title}</p>
       </div>
       <div className="TodoItemBtn">
@@ -18,7 +23,12 @@ function TodoItem({ todo }) {
           <FontAwesomeIcon icon={faPencil} />
         </div>
         <div className="TodoItem-delete">
-            <FontAwesomeIcon icon={faTrashCan}/>
+          <FontAwesomeIcon
+            icon={faTrashCan}
+            onClick={() => {
+              deleteTodoItem(month, todo.id);
+            }}
+          />
         </div>
       </div>
     </div>
