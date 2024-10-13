@@ -43,11 +43,24 @@
           background-color: rgb(129, 207, 255);
         }
       }
-      svg{
+      svg {
         cursor: pointer;
         width: 20px;
         height: 20px;
       }
     }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .Edit-box form {
+    margin-top: 1rem;
+    gap: .5rem;
+  }
+  .Edit-box form .Edit-header {
+    gap: 0.5rem;
+  }
+  .Edit-box form .Edit-header textarea {
+    height: 100px;
   }
 }
