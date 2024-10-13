@@ -6,7 +6,6 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import TodoItem from "./TodoItem";
 import TodoDetail from "./TodoDetail";
 import TodoEdit from "./TodoEdit";
-import $ from "jquery";
 
 function Schedule({
   date,

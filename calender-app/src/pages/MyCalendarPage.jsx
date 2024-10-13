@@ -29,14 +29,16 @@ function MyCalendarPage(props) {
   const closeModal = () => {
     setModal(false);
   };
-  
-  const updateTodoItem = (month, newTodo) =>{
-    const updateList = schedule[month].filter((todo)=> todo.id !== newTodo.id).concat(newTodo);
-    setSchedule((prev)=>({
+
+  const updateTodoItem = (month, newTodo) => {
+    const updateList = schedule[month]
+      .filter((todo) => todo.id !== newTodo.id)
+      .concat(newTodo);
+    setSchedule((prev) => ({
       ...prev,
       [month]: updateList,
     }));
-  }
+  };
 
   const deleteTodoItem = (month, id) => {
     const newList = schedule[month].filter((todo) => todo.id !== id);
@@ -80,8 +82,26 @@ function MyCalendarPage(props) {
 }
 
 function loadData() {
+  // 고정 데이터
+  const Todo = {
+    id: "14f82edc9-7f03-4b9c-b9bc-1e53913566b47",
+    date: "2024년 10월 08일",
+    title: "프로젝트 시작",
+    description: "calender 프로젝트 시작",
+    time: "09:00",
+    idx: 1,
+  };
+  const Todo2 = {
+    id: "1f2edc9-7f03-4b9c-b9bc-1e539135b47",
+    date: "2024년 10월 14일",
+    title: "프로젝트 완성",
+    description: "calender 프로젝트 완성",
+    time: "22:00",
+    idx: 2,
+  };
+  // 로컬스토리지
   const schedule = JSON.parse(localStorage.getItem("schedule"));
-  return schedule ? schedule : {};
+  return schedule ? schedule : { ["10월"]: [Todo, Todo2] };
 }
 
 export default MyCalendarPage;
