@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useLayoutEffect, useState } from "react";
 import moment from "moment";
 import "../css/Schedule.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import TodoItem from "./TodoItem";
 import TodoDetail from "./TodoDetail";
+import TodoEdit from "./TodoEdit";
+import $ from "jquery";
 
 function Schedule({
   date,
@@ -15,7 +17,15 @@ function Schedule({
   selectedTodo,
   deleteTodoItem,
   closeDetail,
+  updateTodoItem,
 }) {
+  const [isEdit, setIsEdit] = useState(false);
+  const handleEditTrue = () => {
+    setIsEdit(true);
+  };
+  const handleEditFalse = () => {
+    setIsEdit(false);
+  };
   // 해당 날짜의 일정 리스트 만들기
   const month = date.getMonth() + 1 + "월";
   const scheduleList = Object.keys(schedule).includes(
@@ -26,7 +36,6 @@ function Schedule({
         .sort((a, b) => a.idx - b.idx)
     : [];
   // console.log(scheduleList);
-
   return (
     <div className="schedule-container">
       <div className="Schedule-header">
@@ -39,6 +48,7 @@ function Schedule({
         </div>
       </div>
       <div className="Schedule-box">
+        {scheduleList == "" && <div className="non-schedule">일정 없음</div>}
         {isList &&
           scheduleList.map((todo, i) => (
             <TodoItem
@@ -47,14 +57,25 @@ function Schedule({
               month={month}
               deleteTodoItem={deleteTodoItem}
               handleTodo={handleTodo}
+              handleEditTrue={handleEditTrue}
             />
           ))}
-        {!isList && (
+        {!isList && !isEdit && (
           <TodoDetail
             todo={selectedTodo}
             month={month}
             closeDetail={closeDetail}
             deleteTodoItem={deleteTodoItem}
+            handleEditTrue={handleEditTrue}
+          />
+        )}
+        {!isList && isEdit && (
+          <TodoEdit
+            todo={selectedTodo}
+            month={month}
+            handleEditFalse={handleEditFalse}
+            handleTodo={handleTodo}
+            updateTodoItem={updateTodoItem}
           />
         )}
       </div>

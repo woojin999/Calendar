@@ -84,7 +84,7 @@ function TodoAddModal({ open, closeModal, date, schedule, addSchedule }) {
           onChange={(e) => setTime(e.target.value)}
         />
         <button type="submit" className="modal-submit">
-          작성하기
+          등록하기
         </button>
       </form>
     </div>

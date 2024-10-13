@@ -4,8 +4,8 @@ import "../css/TodoItem.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
-function TodoItem({ todo, month, deleteTodoItem, handleTodo }) {
-  // console.log(todo);
+function TodoItem({ todo, month, deleteTodoItem, handleTodo, handleEditTrue }) {
+  console.log(todo);
 
   return (
     <div className="TodoItem-box">
@@ -20,7 +20,10 @@ function TodoItem({ todo, month, deleteTodoItem, handleTodo }) {
       </div>
       <div className="TodoItemBtn">
         <div className="TodoItem-edit">
-          <FontAwesomeIcon icon={faPencil} />
+          <FontAwesomeIcon icon={faPencil} onClick={()=>{
+            handleTodo(todo);
+            handleEditTrue();
+          }}/>
         </div>
         <div className="TodoItem-delete">
           <FontAwesomeIcon

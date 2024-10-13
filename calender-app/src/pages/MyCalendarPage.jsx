@@ -29,6 +29,14 @@ function MyCalendarPage(props) {
   const closeModal = () => {
     setModal(false);
   };
+  
+  const updateTodoItem = (month, newTodo) =>{
+    const updateList = schedule[month].filter((todo)=> todo.id !== newTodo.id).concat(newTodo);
+    setSchedule((prev)=>({
+      ...prev,
+      [month]: updateList,
+    }));
+  }
 
   const deleteTodoItem = (month, id) => {
     const newList = schedule[month].filter((todo) => todo.id !== id);
@@ -57,6 +65,7 @@ function MyCalendarPage(props) {
           selectedTodo={selectedTodo}
           deleteTodoItem={deleteTodoItem}
           closeDetail={closeDetail}
+          updateTodoItem={updateTodoItem}
         />
         <TodoAddModal
           open={modal}
