@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/TodoAddModal.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
+import $ from "jquery";
 
 function TodoAddModal({ open, closeModal, date, schedule, addSchedule }) {
   const [title, setTitle] = useState("");
@@ -52,6 +53,17 @@ function TodoAddModal({ open, closeModal, date, schedule, addSchedule }) {
     setTime("09:00");
     closeModal();
   };
+
+  // 모달창 영역 밖에 클릭시 모달 닫기
+  useEffect(() => {
+    $(document).mouseup(function (e) {
+      let clickwrap = $(".TodoAddModal-area");
+      let isClass = clickwrap.hasClass("open");
+      if (isClass && clickwrap.has(e.target).length == 0) {
+        closeModal();
+      }
+    });
+  }, []);
 
   return (
     <div className={open ? "TodoAddModal-area open" : "TodoAddModal-area"}>

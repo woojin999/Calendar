@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import CalendarBox from "../Components/CalendarBox";
 import Schedule from "../Components/Schedule";
 import TodoAddModal from "../Components/TodoAddModal";
+import $ from "jquery";
 
 function MyCalendarPage(props) {
   const [date, setDate] = useState(new Date());
@@ -24,7 +25,6 @@ function MyCalendarPage(props) {
 
   const openModal = () => {
     setModal(true);
-    // console.log("openModal");
   };
   const closeModal = () => {
     setModal(false);
