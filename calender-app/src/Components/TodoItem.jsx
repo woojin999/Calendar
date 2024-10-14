@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 function TodoItem({ todo, month, deleteTodoItem, handleTodo, handleEditTrue }) {
-  console.log(todo);
+  // console.log(todo);
 
   return (
     <div className="TodoItem-box">

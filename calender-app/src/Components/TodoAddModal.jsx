@@ -29,6 +29,7 @@ function TodoAddModal({ open, closeModal, date, schedule, addSchedule }) {
     };
     console.log(newTodo);
 
+    // 기존에 일정이 있을경우
     if (Object.keys(schedule).includes(`${date.getMonth() + 1}월`)) {
       newTodo.idx = schedule[month].length + 1;
       const monthSchedule = schedule[month].concat(newTodo);
@@ -36,15 +37,15 @@ function TodoAddModal({ open, closeModal, date, schedule, addSchedule }) {
         ...prev,
         [month]: monthSchedule,
       }));
-      console.log("있어");
+      // console.log("있어");
     } else {
       addSchedule((prev) => ({
         ...prev,
         [month]: [newTodo],
       }));
-      console.log("없어");
+      // console.log("없어");
     }
-    console.log(schedule);
+    // console.log(schedule);
 
     setTitle("");
     setDescription("");

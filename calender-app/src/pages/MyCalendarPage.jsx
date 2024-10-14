@@ -24,7 +24,7 @@ function MyCalendarPage(props) {
 
   const openModal = () => {
     setModal(true);
-    console.log("openModal");
+    // console.log("openModal");
   };
   const closeModal = () => {
     setModal(false);
