@@ -10,7 +10,7 @@
 ## 📝 컴포넌트 분류
 
 - **CalendarBox** : react-calendar 라이브러리를 사용하여 전체적인 일정 관리 
-- **Schedule.jsx** :Schedule 탭에서 useState를 통해 list,detail,edit 상태 관리
+- **Schedule.jsx** : Schedule 탭에서 useState를 통해 list,detail,edit 상태 관리
 - **TodoAddModal.jsx** : 클릭된 날짜를 props로 받아와 입력된 값을 로컬스토리지에 저장
 - **TodoItem.jsx** : 해당 날짜의 데이터 값을 props 받아 온 후 map을 돌려 리스트 출력 
 - **TodoDetail.jsx** : 해당 일정의 데이터 값을 props 받아 온 후 값 출력
