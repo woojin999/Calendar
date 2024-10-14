@@ -21,9 +21,6 @@ function TodoDetail({
         <p>{todo.description}</p>
       </div>
       <div className="detail-btn-box">
-        <div className="Xbtn-box">
-          <FontAwesomeIcon icon={faX} onClick={closeDetail} />
-        </div>
         <div className="edit-box">
           <FontAwesomeIcon
             icon={faPencil}
@@ -36,6 +33,9 @@ function TodoDetail({
               deleteTodoItem(month, todo.id);
             }}
           />
+        </div>
+        <div className="Xbtn-box">
+          <FontAwesomeIcon icon={faX} onClick={closeDetail} />
         </div>
       </div>
     </div>
