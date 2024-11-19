@@ -115,9 +115,25 @@ function loadData() {
     time: "22:00",
     idx: 2,
   };
+  const Todo5 = {
+    id: "4234as-7f03-4b9c-b9bc-1e53913566b47",
+    date: "2024년 12월 14일",
+    title: "약속",
+    description: "친구 약속",
+    time: "12:00",
+    idx: 1,
+  };
+  const Todo6 = {
+    id: "123asd-7f03-4b9c-b9bc-1e539135b47",
+    date: "2024년 12월 25일",
+    title: "리액트 복습하기",
+    description: "리액트 복습하기",
+    time: "14:00",
+    idx: 2,
+  };
   // 로컬스토리지
   const schedule = JSON.parse(localStorage.getItem("schedule"));
-  return schedule ? schedule : { ["10월"]: [Todo, Todo2], ["11월"]: [Todo3, Todo4]};
+  return schedule ? schedule : { ["10월"]: [Todo, Todo2], ["11월"]: [Todo3, Todo4], ["12월"]: [Todo5, Todo6]};
 }
 
 export default MyCalendarPage;
