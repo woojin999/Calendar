@@ -105,7 +105,7 @@ function loadData() {
     title: "리액트 공부",
     description: "리액트 공부하기",
     time: "09:00",
-    idx: 3,
+    idx: 1,
   };
   const Todo4 = {
     id: "123dc9-7f03-4b9c-b9bc-1e539135b47",
@@ -113,7 +113,7 @@ function loadData() {
     title: "리액트 복습하기",
     description: "리액트 복습하기",
     time: "22:00",
-    idx: 4,
+    idx: 2,
   };
   // 로컬스토리지
   const schedule = JSON.parse(localStorage.getItem("schedule"));
