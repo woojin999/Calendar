@@ -126,8 +126,8 @@ function loadData() {
   const Todo6 = {
     id: "123asd-7f03-4b9c-b9bc-1e539135b47",
     date: "2024년 12월 25일",
-    title: "리액트 복습하기",
-    description: "리액트 복습하기",
+    title: "크리스마스",
+    description: "크리스마스",
     time: "14:00",
     idx: 2,
   };
